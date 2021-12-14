@@ -23,6 +23,7 @@ int main()
 
     if(pid1 == 0)
     {
+        printf("Child1 Process\n");
         close(pip[1]);
 
         while (read(pip[0], &x2, sizeof(char*)) == sizeof(char*))
@@ -33,6 +34,7 @@ int main()
     }
     else if(pid2 == 0)
     {
+        printf("Child2 Process\n");
         close(pip[1]);
 
         while (read(pip[0], &x2, sizeof(char*)) == sizeof(char*))
@@ -43,6 +45,7 @@ int main()
     }
     else
     {
+        printf("Parent P1\n");
         close(pip[0]);
         printf("enter any word\n");
         scanf("%s",x1);
